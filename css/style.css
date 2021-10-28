@@ -1,0 +1,129 @@
+body {
+    font-family: "Alegreya Sans SC", serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_links a:visited {
+    color: rgb(0,0,238)
+}
+
+.card > header {
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.pricing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+    
+.card {
+    display: flex;
+    flex-basis: 450px;
+    flex-direction: column;
+}
+
+.gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@keyframes logo {
+    from {width: 50px; opacity: 0;}
+    to {width: 425px; opacity: 1;}
+}
+
+#logo {
+    animation-name: logo;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+@media screen and (min-width: 850px) {
+    body > header {
+        flex-direction: row;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+    }
+    .nav_links {
+        flex-direction: row;
+    }
+
+    .card {
+        flex-basis: 250px;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+    }
+}
+
+@media print {
+    body {
+        background-image: none;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    #gallery, .gallery {
+        display: none;
+    }
+
+    .card {
+        flex-basis: 250px;
+        border: 2px solid #45ADDD;
+    }
+
+    .pricing {
+        align-items: flex-end;
+        flex-wrap: nowrap;
+    }
+
+    body > header {
+        flex-direction: column;
+    }
+
+    .card li:nth-child(odd)::before {
+        content: '\1F44D';
+    }
+
+    .card li:nth-child(even)::after {
+        content: '\1F44D';
+    }
+
+}
